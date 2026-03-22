@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
 import { PaperPlaneTilt, CheckCircle, CircleNotch } from "@phosphor-icons/react";
+import { withBasePath } from "../lib/withBasePath";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
@@ -53,7 +54,7 @@ export function Waitlist() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.img
-              src="/bear-transparent.png"
+              src={withBasePath("/bear-transparent.png")}
               alt="Cozy teddy bear astronaut"
               className="w-40 md:w-56 h-auto mb-8 drop-shadow-[0_16px_40px_rgba(0,0,0,0.15)] origin-bottom cursor-pointer relative z-10"
               animate={{ y: [0, -12, 0], rotate: [0, 2, -2, 0] }}

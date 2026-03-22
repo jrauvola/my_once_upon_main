@@ -4,6 +4,7 @@ import { motion, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, BookOpenText, Sparkle, Star } from "@phosphor-icons/react";
 import { MagneticButton } from "./MagneticButton";
 import { memo, useEffect } from "react";
+import { withBasePath } from "../lib/withBasePath";
 
 const FloatingStars = memo(function FloatingStars() {
   const stars = [
@@ -142,7 +143,7 @@ export function Hero() {
         {/* Generated background image — full bleed on mobile so no white strip */}
         <div className="absolute inset-0 md:rounded-bl-[8rem] overflow-hidden bg-gradient-to-br from-sky-50 via-pink-50/50 to-sky-50/30">
           <motion.img
-            src="/hero-bg.png"
+            src={withBasePath("/hero-bg.png")}
             alt="Magical starry night forest background"
             className="w-full h-full object-cover object-center opacity-90 mix-blend-multiply"
             initial={{ scale: 1.1 }}
@@ -166,7 +167,7 @@ export function Hero() {
           <div className="absolute w-[60%] h-[60%] bg-white/40 rounded-full blur-[60px]" />
 
           <motion.img
-            src="/dragon-transparent.png"
+            src={withBasePath("/dragon-transparent.png")}
             alt="Friendly baby dragon reading a book"
             className="w-[88%] max-w-[380px] sm:w-[85%] sm:max-w-[480px] md:w-[110%] md:max-w-[560px] h-auto object-contain object-bottom drop-shadow-[0_20px_60px_rgba(0,0,0,0.18)] origin-bottom md:-ml-12 cursor-pointer relative z-10"
             animate={{ y: [0, -15, 0] }}

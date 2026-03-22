@@ -10,6 +10,7 @@ import {
   Sparkle,
   CheckCircle,
 } from "@phosphor-icons/react";
+import { withBasePath } from "../lib/withBasePath";
 
 const BedtimeSparkles = memo(function BedtimeSparkles() {
   const sparkles = [
@@ -271,7 +272,7 @@ export function BentoFeatures() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.img
-              src="/storybook-transparent.png"
+              src={withBasePath("/storybook-transparent.png")}
               alt="Magical floating storybook"
               className="w-56 md:w-80 h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] relative z-10 cursor-pointer"
               animate={{ y: [0, -20, 0], rotate: [2, -2, 2] }}
@@ -374,7 +375,7 @@ export function BentoFeatures() {
               <div className="absolute inset-y-0 left-0 w-[80%] bg-gradient-to-r from-[#0f172a] via-[#0f172a]/80 to-transparent z-10" />
               <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-transparent to-transparent z-10 opacity-50" />
               <motion.img 
-                src="/bedtime.png" 
+                src={withBasePath("/bedtime.png")} 
                 alt="Bedtime illustration" 
                 className="w-full h-[120%] object-cover object-right opacity-80 mix-blend-screen -mt-6"
                 animate={{ y: [0, -10, 0], scale: [1, 1.02, 1] }}
