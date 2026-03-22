@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { withBasePath } from "../lib/withBasePath";
 
 interface IllustrationDividerProps {
   src: string;
@@ -30,7 +31,7 @@ function Sticker({ src, alt, flip = false }: { src: string; alt: string; flip?: 
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.img
-        src={src}
+        src={withBasePath(src)}
         alt={alt}
         className="w-40 md:w-56 lg:w-72 h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)] pointer-events-auto cursor-pointer relative z-10"
         animate={{ y: [0, -20, 0], rotate: flip ? [4, -4, 4] : [-4, 4, -4] }}
@@ -72,7 +73,7 @@ export function IllustrationDivider({ src, alt, flip = false }: IllustrationDivi
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.img
-          src={src}
+          src={withBasePath(src)}
           alt={alt}
           className="w-48 md:w-64 lg:w-80 h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)] pointer-events-auto cursor-pointer relative z-10"
           animate={{ 
